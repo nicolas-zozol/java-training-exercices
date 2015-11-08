@@ -3,6 +3,10 @@ package io.robusta.hand;
 import java.util.Iterator;
 import java.util.TreeSet;
 
+/**
+ * In a HandValue, the As will often hanve a 14 value
+ * @author nicorama
+ */
 public class HandValue implements Comparable<HandValue>{
 
 	/**
@@ -21,10 +25,12 @@ public class HandValue implements Comparable<HandValue>{
 	/**
 	 * Other cards of the hand for advanced comparisons
 	 */
-	TreeSet<Card> otherCards;
+	TreeSet<Card> otherCards = new TreeSet<>();
 	
 	
-	
+	public HandValue() {
+		
+	}
 	
 	public HandValue(HandClassifier classifier, int levelValue, TreeSet<Card> otherCards) {
 		this.classifier = classifier;
@@ -47,6 +53,12 @@ public class HandValue implements Comparable<HandValue>{
 			return Integer.valueOf(levelValue).
 					compareTo(o.levelValue);
 		}
+		
+		if(secondLevel != o.secondLevel){
+			return Integer.valueOf(secondLevel).
+					compareTo(o.secondLevel);
+		}
+		
 		
 		//else compare remaining cards
 		return compareSets(this.otherCards, o.otherCards);
@@ -75,4 +87,46 @@ public class HandValue implements Comparable<HandValue>{
 		return 0;
 		
 	}
+
+
+	public HandClassifier getClassifier() {
+		return classifier;
+	}
+
+
+	public void setClassifier(HandClassifier classifier) {
+		this.classifier = classifier;
+	}
+
+
+	public int getLevelValue() {
+		return levelValue;
+	}
+
+
+	public void setLevelValue(int levelValue) {
+		this.levelValue = levelValue;
+	}
+
+
+	public int getSecondLevel() {
+		return secondLevel;
+	}
+
+
+	public void setSecondLevel(int secondLevel) {
+		this.secondLevel = secondLevel;
+	}
+
+
+	public TreeSet<Card> getOtherCards() {
+		return otherCards;
+	}
+
+
+	public void setOtherCards(TreeSet<Card> otherCards) {
+		this.otherCards = otherCards;
+	}
+	
+	
 }

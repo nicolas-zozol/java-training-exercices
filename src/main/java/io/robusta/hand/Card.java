@@ -70,6 +70,10 @@ public class Card implements Comparable<Card> {
 		return this.getValue() == AS_VALUE;
 	}
 
+	/**
+	 * Aces are always stronger.
+	 * CompareTo WILL differentiate 5c from 5s. If not, a Set would not allow both
+	 */
 	@Override
 	public int compareTo(Card o) {
 		//Aces
@@ -83,7 +87,10 @@ public class Card implements Comparable<Card> {
 		return Integer.valueOf(this.deckValue).compareTo(o.deckValue);
 	}
 	
-	
+	/**
+	 * Aces are always stronger.
+	 * CompareValue will NOT differentiate 5c from 5s. Both are equals.
+	 */
 	public int compareValue(Card o) {
 		//Aces
 		

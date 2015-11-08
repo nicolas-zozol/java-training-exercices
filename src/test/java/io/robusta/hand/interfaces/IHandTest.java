@@ -1,6 +1,6 @@
 package io.robusta.hand.interfaces;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
@@ -72,10 +72,7 @@ public class IHandTest extends PokerTest {
 	@Test
 	public void testIsStraight() {
 		IHand hand = newHand("4c 5c 2s 3s 6h");
-		assertTrue(hand.toString(), hand.isStraight());
-
-		hand = newHand("Tc Jc As Qs Kh");
-		assertTrue(hand.toString(), hand.isStraight());
+		assertTrue(hand.toString(), hand.isStraight());		
 	}
 	
 	@Test
@@ -83,6 +80,9 @@ public class IHandTest extends PokerTest {
 	public void testIsStraightWithAce() {
 		
 		IHand hand = newHand("4c 5c 2s 3s Ah");
+		assertTrue(hand.toString(), hand.isStraight());
+		
+		hand = newHand("Tc Jc As Qs Kh");
 		assertTrue(hand.toString(), hand.isStraight());
 	}
 
@@ -97,7 +97,7 @@ public class IHandTest extends PokerTest {
 	@Test
 	public void testTwoPair() {
 		IHand hand = newHand("4c 4h 2c 2s Qc");
-		assertTrue(hand.getClassifier() == HandClassifier.TWO_PAIR);
+		assertEquals(HandClassifier.TWO_PAIR, hand.getClassifier());
 		
 		hand = newHand("4c 5c 2c 3c Qc");
 		assertTrue(hand.toString(), hand.isFlush());
@@ -111,7 +111,7 @@ public class IHandTest extends PokerTest {
 	
 	@Test
 	public void testStraightFlush() {
-		IHand hand = newHand("2c 3c 4c 5s 6c");
+		IHand hand = newHand("2c 3c 4c 5c 6c");
 		assertTrue(hand.getClassifier() == HandClassifier.STRAIGHT_FLUSH);
 	}
 	
@@ -120,6 +120,39 @@ public class IHandTest extends PokerTest {
 		IHand hand1 = newHand("4c Kh 2c 2s Qc");
 		IHand hand2 = newHand("2c 3c 4c 5s 6c");
 		assertTrue(hand2.beats(hand1));
+		
+		hand1 = newHand("2d 2h 2c 2s Qc");
+		hand2 = newHand("2c 3c 4c 5s 6c");
+		assertTrue(hand1.beats(hand2));
+		
+		hand1 = newHand("Td Th Kc 2s Qc");
+		hand2 = newHand("Tc Ts 4c 5s 6c");
+		assertTrue(hand1.beats(hand2));
+	}
+	
+	@Test
+	public void testHasCardValue(){
+		IHand hand = newHand("4c Kh 2c 2s Qc");
+		assertTrue(hand.hasCardValue(13));
+		assertFalse(hand.hasCardValue(1));
+	}
+	
+	@Test
+	public void testHasAce(){
+		IHand hand = newHand("4c Kh 2c 2s Qc");
+		assertFalse(hand.hasAce());
+		
+		hand = newHand("Ac Kh 2c 2s Qc");
+		assertTrue(hand.hasAce());
+	}
+	
+	@Test
+	public void testHighestValue(){
+		IHand hand = newHand("4c Kh 2c 2s Qc");
+		assertEquals(13, hand.highestValue());
+		
+		hand = newHand("Ac Kh 2c 1s Qc");
+		assertEquals(14, hand.highestValue());
 	}
 
 }

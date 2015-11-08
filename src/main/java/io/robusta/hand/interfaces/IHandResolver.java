@@ -5,13 +5,14 @@ import java.util.List;
 
 import io.robusta.hand.Card;
 import io.robusta.hand.HandClassifier;
+import io.robusta.hand.HandValue;
 
 /**
  * Works on a specific Hand
  * 
  * @author nicorama
  */
-public interface IHandResolver {
+public interface IHandResolver extends Comparable<IHandResolver>{
 
 	public IHand getHand();
 
@@ -34,7 +35,27 @@ public interface IHandResolver {
 	public boolean isStraight();
 
 	public boolean isFlush();
+	
+	public boolean isStraightFlush();
+	
+	public boolean isPair();
+	
+	public boolean isDoublePair();
+	
+	public boolean isHighCard();
+	
+	public boolean isTrips();
+	
+	public boolean isFourOfAKind();
+	
+	public boolean isFull();
 
+	public HandValue getValue();
+	
+	/**
+	 * Shortcut from the HandValue
+	 * @return the Classifier of its HandValue
+	 */
 	public HandClassifier getClassifier();
 
 }
