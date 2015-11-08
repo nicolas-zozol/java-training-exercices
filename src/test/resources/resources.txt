@@ -1,0 +1,4 @@
+http://www.codeproject.com/Articles/38821/Make-a-poker-hand-evalutator-in-Java
+https://www.udacity.com/wiki/cs212/unit-1
+http://www.mathcs.emory.edu/~cheung/Courses/170/Syllabus/10/pokerCheck.html
+
