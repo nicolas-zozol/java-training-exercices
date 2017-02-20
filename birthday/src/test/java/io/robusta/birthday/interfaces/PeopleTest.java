@@ -8,11 +8,11 @@ import static org.junit.Assert.*;
 /**
  * Created by Nicolas Zozol on 05/10/2016.
  */
-public class IPeopleTest {
+public class PeopleTest {
 
     @Test
     public void getBirthday() throws Exception {
-        IPeople people = new People();
+        People people = new People();
         people.setBirthday(200);
         assertTrue(people.getBirthday() == 200);
     }
@@ -20,14 +20,14 @@ public class IPeopleTest {
     @Test
     public void equals() throws Exception {
 
-        IPeople jo = new People();
+        People jo = new People();
         jo.setBirthday(200);
 
-        IPeople jane = new People();
+        People jane = new People();
         jo.setBirthday(200);
         assertTrue(jane.equals(jo));
         
-        IPeople jack = new People();
+        People jack = new People();
         jo.setBirthday(300);
         assertFalse(jo.equals(jack));
 

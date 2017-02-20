@@ -9,22 +9,22 @@ import static org.junit.Assert.*;
 /**
  * Created by Nicolas Zozol on 05/10/2016.
  */
-public class IPeopleCollectionTest {
+public class PeopleCollectionTest {
     @Test
     public void hasSame() throws Exception {
 
 
-        IPeople jo = new People();
+        People jo = new People();
         jo.setBirthday(200);
 
-        IPeople jane = new People();
+        People jane = new People();
         jane.setBirthday(200);
 
-        IPeople jack = new People();
+        People jack = new People();
         jack.setBirthday(300);
         assertFalse(jo.equals(jack));
 
-        IPeopleCollection collection = new PeopleCollection();
+        PeopleCollection collection = new PeopleCollection();
         collection.add(jo);
         collection.add(jane);
         collection.add(jack);
@@ -41,7 +41,7 @@ public class IPeopleCollectionTest {
     @Test
     public void createRandomCollection(){
         // empty collection, should not have same
-        IPeopleCollection collection = new PeopleCollection(0);
+        PeopleCollection collection = new PeopleCollection(0);
         assertFalse(collection.hasSame());
 
         // only one collection, should not have same

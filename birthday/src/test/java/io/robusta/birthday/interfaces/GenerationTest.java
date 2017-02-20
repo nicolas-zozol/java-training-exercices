@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 /**
  * Created by Nicolas Zozol on 05/10/2016.
  */
-public class IGenerationTest {
+public class GenerationTest {
 
     Generation generation;
 
@@ -39,9 +39,9 @@ public class IGenerationTest {
 
     @Test
     public void getPeopleCollection() throws Exception {
-        IGeneration generation = new Generation(5, 100);
-        assertTrue(generation.getPeopleCollection().size() == 5);
-        assertTrue(generation.getPeopleCollection().get(3).size() == 100);
+        Generation generation = new Generation(5, 100);
+        assertTrue(generation.getPeopleCollections().size() == 5);
+        assertTrue(generation.getPeopleCollections().get(3).size() == 100);
     }
 
     @Test
