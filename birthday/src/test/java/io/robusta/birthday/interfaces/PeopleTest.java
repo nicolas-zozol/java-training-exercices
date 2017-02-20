@@ -24,11 +24,11 @@ public class PeopleTest {
         jo.setBirthday(200);
 
         People jane = new People();
-        jo.setBirthday(200);
+        jane.setBirthday(200);
         assertTrue(jane.equals(jo));
         
         People jack = new People();
-        jo.setBirthday(300);
+        jack.setBirthday(300);
         assertFalse(jo.equals(jack));
 
 
