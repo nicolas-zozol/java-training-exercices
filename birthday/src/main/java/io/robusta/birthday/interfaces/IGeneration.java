@@ -14,7 +14,7 @@ public interface IGeneration {
 
     List<? extends PeopleCollection> createAllRandom(int n, int size);
 
-    List<? extends PeopleCollection> getPeopleCollection();
+    List<? extends PeopleCollection> getPeopleCollections();
 
     int getNumberOfCollectionsThatHasTwoPeopleWithSameBirthday();
 

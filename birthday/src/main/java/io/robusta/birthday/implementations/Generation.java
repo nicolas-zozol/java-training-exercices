@@ -33,7 +33,7 @@ public class Generation implements IGeneration{
     }
 
     @Override
-    public List<PeopleCollection> getPeopleCollection() {
+    public List<PeopleCollection> getPeopleCollections() {
         return null;
     }
 
