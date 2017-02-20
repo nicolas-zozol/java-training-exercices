@@ -29,16 +29,9 @@ public class PeopleCollection extends ArrayList<People>implements IPeopleCollect
 	@Override
 	public boolean hasSame() {
 		
-		for (int currentIndex = 0 ; currentIndex < this.size() ;currentIndex++){
-			IPeople pCurrent = this.get(currentIndex);
-			for (int j =  currentIndex +1 ; j< this.size() ; j++ ){
-				IPeople pCompare = this.get(j);
-				
-				if (pCurrent.equals(pCompare)){
-					return true;
-				}
-			}
-		}
+		/* return true if two people of the same collection has
+		 same birthday
+		  */
 		
 		return false;
 	}

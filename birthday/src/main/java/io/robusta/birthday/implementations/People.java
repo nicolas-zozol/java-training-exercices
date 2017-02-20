@@ -17,6 +17,7 @@ public class People implements IPeople {
     }
 
     public boolean equals(IPeople people) {
-    		return this.birthday == people.getBirthday();
+        // should be true if two people has same birthday
+    		return false;
     }
 }
