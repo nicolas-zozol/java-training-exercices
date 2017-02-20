@@ -12,9 +12,9 @@ public interface IGeneration {
 
     IPeopleCollection createRandom(int size);
 
-    List<IPeopleCollection> createAllRandom(int n, int size);
+    List<? extends PeopleCollection> createAllRandom(int n, int size);
 
-    List<PeopleCollection> getPeopleCollection();
+    List<? extends PeopleCollection> getPeopleCollection();
 
     int getNumberOfCollectionsThatHasTwoPeopleWithSameBirthday();
 

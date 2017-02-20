@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class Generation implements IGeneration{
 
-    List<IPeopleCollection> collections;
+    List<PeopleCollection> collections;
 
     public Generation(){
 
@@ -22,12 +22,12 @@ public class Generation implements IGeneration{
     }
 
     @Override
-    public IPeopleCollection createRandom(int size) {
+    public PeopleCollection createRandom(int size) {
         return null;
     }
 
     @Override
-    public List<IPeopleCollection> createAllRandom(int n, int size) {
+    public List<PeopleCollection> createAllRandom(int n, int size) {
         // call n times createRandom(size)
         return null;
     }

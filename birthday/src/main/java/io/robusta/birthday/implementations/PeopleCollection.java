@@ -9,7 +9,7 @@ import java.util.Random;
 /**
  * Created by Nicolas Zozol on 04/10/2016.
  */
-public class PeopleCollection extends ArrayList<IPeople>implements IPeopleCollection<IPeople> {
+public class PeopleCollection extends ArrayList<People>implements IPeopleCollection<People> {
 
 	public PeopleCollection() {
 
@@ -18,7 +18,7 @@ public class PeopleCollection extends ArrayList<IPeople>implements IPeopleCollec
 	public PeopleCollection(int size) {
 		super(size);
 		for (int i = 0; i < size; i++) {
-			IPeople people = new People();
+			People people = new People();
 			Random random = new Random();
 			int date = random.nextInt(365) + 1;
 			people.setBirthday(date);

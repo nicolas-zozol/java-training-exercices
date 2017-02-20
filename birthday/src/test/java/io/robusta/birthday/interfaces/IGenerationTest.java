@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
  */
 public class IGenerationTest {
 
-    IGeneration generation;
+    Generation generation;
 
     @Before
     public void setUp() throws Exception {
@@ -25,14 +25,14 @@ public class IGenerationTest {
     @Test
     public void createRandom() throws Exception {
 
-        IPeopleCollection collection = generation.createRandom(10);
+        PeopleCollection collection = generation.createRandom(10);
         assertTrue(collection.size() == 10);
 
     }
 
     @Test
     public void createAllRandom() throws Exception {
-        List<IPeopleCollection> collections = generation.createAllRandom(10, 40);
+        List<PeopleCollection> collections = generation.createAllRandom(10, 40);
         assertTrue(collections.size() == 10);
         assertTrue(collections.get(3).size() == 40);
     }
