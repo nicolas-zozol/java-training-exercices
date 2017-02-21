@@ -2,6 +2,7 @@ package io.robusta.hand.interfaces;
 
 import static org.junit.Assert.*;
 
+import io.robusta.hand.Card;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
@@ -54,17 +55,17 @@ public class IHandTest extends PokerTest {
 		assertTrue(hand.number(3) ==3);
 		
 		hand = newHand("4c 4s 2s 3s 6h");
-		assertTrue(hand.number(1) ==0);
+		assertTrue(hand.number(Card.AS_VALUE) ==0);
 		
 		hand = newHand("4c 4s 2s As Ah");
-		assertTrue(hand.number(1) ==2);
+		assertTrue(hand.number(Card.AS_VALUE) ==2);
 	}
 
 	@Test
 	public void testGroup() {
 		IHand hand = newHand("4c 4s 2s As Ah");
 		assertTrue(hand.group().get(4).size()==2);
-		assertTrue(hand.group().get(1).size()==2);
+		assertTrue(hand.group().get(Card.AS_VALUE).size()==2);
 		assertTrue(hand.group().get(12)==null);
 		assertTrue(hand.group().get(2).size()==1);
 	}

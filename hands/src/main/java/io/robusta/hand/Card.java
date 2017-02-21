@@ -2,12 +2,15 @@ package io.robusta.hand;
 
 public class Card implements Comparable<Card> {
 
-	public static int AS_VALUE = 1;
+	public static final int AS_VALUE = 14;
 	int value;
 	CardColor color;
 	int deckValue;
 	
 	public Card(int value, CardColor color) {
+		if (value ==1){
+			value = AS_VALUE;
+		}
 		this.value = value;
 		this.color = color;
 		this.deckValue= (this.value -1)*4+color.value;
@@ -31,6 +34,7 @@ public class Card implements Comparable<Card> {
 	public char getCharValue(){
 		switch (this.value){
 			case 1 : return 'A';
+			case 14 : return 'A';
 			case 10 : return 'T';
 			case 11 : return 'J';
 			case 12 : return 'Q';

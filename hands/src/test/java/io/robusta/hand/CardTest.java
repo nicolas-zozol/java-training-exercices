@@ -88,7 +88,8 @@ public class CardTest extends PokerTest{
 		c = new Card(11, CardColor.HEART);
 		compare = generateCard("Kc");
 		assertTrue(c.compareTo(compare) != 0);
-		
+
+		// As is more than 9
 		c = new Card(1, CardColor.DIAMOND);
 		compare = generateCard("9d");
 		assertTrue(c.compareTo(compare) >0);
