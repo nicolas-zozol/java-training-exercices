@@ -8,12 +8,16 @@ public class Card implements Comparable<Card> {
 	int deckValue;
 	
 	public Card(int value, CardColor color) {
-		if (value ==1){
-			value = AS_VALUE;
-		}
-		this.value = value;
 		this.color = color;
-		this.deckValue= (this.value -1)*4+color.value;
+		if (value ==1){
+			this.value = AS_VALUE;
+			// As has deck value 1,2,3,4
+			this.deckValue=color.value;
+		}else{
+			this.value = value;
+			this.deckValue= (this.value -1)*4+color.value;
+		}
+
 	}
 	
 	

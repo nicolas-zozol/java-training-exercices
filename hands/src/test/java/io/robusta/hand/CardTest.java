@@ -23,6 +23,17 @@ public class CardTest extends PokerTest{
 	}
 
 	@Test
+	public void testDeckValue(){
+		//deck value = (5-1)*4 + 4 = 20
+		Card c = new Card(5, CardColor.CLUB);
+		assertTrue(c.deckValue == 20);
+
+		//Aces: deck value = colorValue =  3
+		Card ace = new Card(1, CardColor.DIAMOND);
+		assertEquals(ace.deckValue, 3);
+	}
+
+	@Test
 	public void testToString() {
 		Card c = new Card(5, CardColor.CLUB);
 		assertTrue(c.toString().equals("5c"));

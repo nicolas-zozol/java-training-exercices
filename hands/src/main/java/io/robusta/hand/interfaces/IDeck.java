@@ -30,6 +30,5 @@ public interface IDeck extends Collection<Card>{
 	 * @return current size of the deck
 	 */
 	public int size();
-	
-	public boolean contains(Card card);
+
 }

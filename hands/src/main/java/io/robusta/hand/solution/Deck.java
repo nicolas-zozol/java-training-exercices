@@ -25,12 +25,7 @@ public class Deck extends LinkedList<Card> implements IDeck{
 		return this.remove(index);
 	}
 
-	@Override
-	public boolean contains(Card card) {
-		return super.contains((Object)card);
-	}
-	
-	
+
 	
 
 	@Override
