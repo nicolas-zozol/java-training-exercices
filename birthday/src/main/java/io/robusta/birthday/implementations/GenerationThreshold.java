@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class GenerationThreshold implements IGenerationThreshold{
 
 
-    public GenerationThreshold(int size) {
+    public GenerationThreshold() {
 
 
 
