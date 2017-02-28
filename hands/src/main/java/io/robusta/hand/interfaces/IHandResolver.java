@@ -2,6 +2,7 @@ package io.robusta.hand.interfaces;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import io.robusta.hand.Card;
 import io.robusta.hand.HandClassifier;
@@ -20,7 +21,7 @@ public interface IHandResolver extends Comparable<IHandResolver>{
 	 * Check how many times the card level is found 5s in "5s 6d 5c 5h As" is
 	 * found three times
 	 * 
-	 * @param c
+	 * @param cardLevel
 	 * @return
 	 */
 	public int number(int cardLevel);
@@ -30,7 +31,7 @@ public interface IHandResolver extends Comparable<IHandResolver>{
 	 * 
 	 * @return
 	 */
-	public HashMap<Integer, List<Card>> group();
+	public Map<Integer, List<Card>> group();
 
 	public boolean isStraight();
 

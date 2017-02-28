@@ -80,7 +80,7 @@ public class Hand extends TreeSet<Card> implements IHand{
      * Check the tests and README to understand
      */
 	@Override
-	public HashMap<Integer, List<Card>> group() {
+	public Map<Integer, List<Card>> group() {
 		HashMap<Integer, List<Card> > map = new HashMap<>();
 
         // fill the map
