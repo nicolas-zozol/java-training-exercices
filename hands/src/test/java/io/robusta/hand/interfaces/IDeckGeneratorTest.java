@@ -15,7 +15,7 @@ import io.robusta.hand.solution.DeckGenerator;
 
 public class IDeckGeneratorTest extends PokerTest{
 
-	IDeckGenerator generator;
+
 	
 	@Before
 	public void setUp() throws Exception {

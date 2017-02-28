@@ -3,34 +3,28 @@ package io.robusta.hand;
 import java.util.TreeSet;
 
 import io.robusta.hand.interfaces.IDeckGenerator;
-import io.robusta.hand.solution.Deck;
+import io.robusta.hand.solution.DeckGenerator;
 
 public class PokerTest {
 
-	IDeckGenerator abstractGenerator;
+	public IDeckGenerator generator;
 	public 	Card fourSpade;
 	public Card aceClub;
 	public Card queenHeart;
 	
 	public PokerTest() {
-		abstractGenerator = new IDeckGenerator() {
-			
-			@Override
-			public Deck generate() {
-				return null;
-			}
-		};
-		fourSpade = abstractGenerator.generateCard("4s");
-		aceClub = abstractGenerator.generateCard("Ac");
-		queenHeart = abstractGenerator.generateCard("Qh");
+		generator = new DeckGenerator();
+		fourSpade = generator.generateCard("4s");
+		aceClub = generator.generateCard("Ac");
+		queenHeart = generator.generateCard("Qh");
 	}
 	
 	public Card generateCard(String card){
-		return abstractGenerator.generateCard(card);
+		return generator.generateCard(card);
 	}
 	
 	public TreeSet<Card> generateCards(String card){
-		return abstractGenerator.generateCards(card);
+		return generator.generateCards(card);
 	}
 	
 	
