@@ -18,24 +18,24 @@ public class HandValue implements Comparable<HandValue>{
 	 * the straight 4-5-6-7-8 has a 8 value
 	 * T-J-Q-K-A has 14  value !!!  
 	 */
-	int levelValue;
+	int levelValue = 0;
 	
 	//Needed with two pairs or full
 	int secondLevel = 0;
 	/**
-	 * Other cards of the hand for advanced comparisons
+	 * Single cards of the hand for advanced comparisons
 	 */
-	TreeSet<Card> otherCards = new TreeSet<>();
+	TreeSet<Card> singleCards = new TreeSet<>();
 	
 	
 	public HandValue() {
 		
 	}
 	
-	public HandValue(HandClassifier classifier, int levelValue, TreeSet<Card> otherCards) {
+	public HandValue(HandClassifier classifier, int levelValue, TreeSet<Card> singleCards) {
 		this.classifier = classifier;
 		this.levelValue = levelValue;
-		this.otherCards = otherCards;
+		this.singleCards = singleCards;
 	}
 
 
@@ -60,8 +60,8 @@ public class HandValue implements Comparable<HandValue>{
 		}
 		
 		
-		//else compare remaining cards
-		return compareSets(this.otherCards, o.otherCards);
+		//else compare single cards
+		return compareSets(this.singleCards, o.singleCards);
 		
 		
 	}
@@ -119,13 +119,13 @@ public class HandValue implements Comparable<HandValue>{
 	}
 
 
-	public TreeSet<Card> getOtherCards() {
-		return otherCards;
+	public TreeSet<Card> getSingleCards() {
+		return singleCards;
 	}
 
 
-	public void setOtherCards(TreeSet<Card> otherCards) {
-		this.otherCards = otherCards;
+	public void setSingleCards(TreeSet<Card> singleCards) {
+		this.singleCards = singleCards;
 	}
 	
 	

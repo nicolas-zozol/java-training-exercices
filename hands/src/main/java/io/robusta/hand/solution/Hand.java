@@ -1,15 +1,12 @@
 package io.robusta.hand.solution;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
 import io.robusta.hand.Card;
-import io.robusta.hand.CardColor;
 import io.robusta.hand.HandClassifier;
 import io.robusta.hand.HandValue;
 import io.robusta.hand.interfaces.IDeck;
@@ -90,11 +87,10 @@ public class Hand extends TreeSet<Card> implements IHand{
 
 
     // different states of the hand
-	int mainValue;
-	int tripsValue;
-	int pairValue;
-	int secondValue;
-	TreeSet<Card> remainings;
+    // Using stateful variables. We need to fill this, then use it before.
+	int levelValue = 0;
+	int secondValue = 0;
+	TreeSet<Card> singleCards = new TreeSet<>();
 
 
     /**
@@ -102,18 +98,18 @@ public class Hand extends TreeSet<Card> implements IHand{
      * @param map
      * @return
      */
-    TreeSet<Card>getGroupRemainingsCard(Map<Integer, List<Card>> map){
-        TreeSet<Card> groupRemaining = new TreeSet<>();
+    TreeSet<Card> getSingleCards(Map<Integer, List<Card>> map){
+        TreeSet<Card> singleCards = new TreeSet<>();
         // May be adapted at the end of project:
         // if straight or flush : return empty
         // If High card, return 4 cards
 
         for (List<Card> group :map.values()){
             if (group.size() ==1){
-                groupRemaining.add(group.get(0));
+                singleCards.add(group.get(0));
             }
         }
-        return groupRemaining;
+        return singleCards;
     }
 
 
@@ -177,10 +173,12 @@ public class Hand extends TreeSet<Card> implements IHand{
 		// Exemple for FourOfAKind ; // do for all classifiers
 		if(this.isFourOfAKind()){
 			handValue.setClassifier(HandClassifier.FOUR_OF_A_KIND);
-			handValue.setLevelValue(this.mainValue);
-			handValue.setOtherCards(this.remainings); // or this.getRemainings()
+			handValue.setLevelValue(this.levelValue);
+			handValue.setSingleCards(this.singleCards); // or this.getsingleCards()
 			return handValue;
 		}
+
+        // For the flush, all singleCards are needed
 
 		return handValue;
 	}
