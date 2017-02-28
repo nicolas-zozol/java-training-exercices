@@ -25,6 +25,8 @@ TODOs
 * then `GenerationTest`
 * Create tests for `GenerationThreshold`
 * pass the test for `GenerationThresholdTest`
+    - first ignore getSmallNumber() and getBigNumber()
+    - use dichotomie with small = 15, big = 35, find 23
 * Write an Application that makes it work 
 	
 
