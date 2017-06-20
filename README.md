@@ -14,3 +14,8 @@ It's designed for Java beginners, so there are a lot of small steps and it's wel
 
 
 # Where to start ?
+
+at the beginning 
+
+
+
