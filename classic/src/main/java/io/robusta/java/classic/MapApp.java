@@ -43,11 +43,11 @@ public class MapApp {
     }
 
 
-    int[]  getKeysHavingValue(Map<Integer, String> map, int value){
+    List<Integer>  getKeysHavingValue(Map<Integer, String> map, String value){
         return null;
     }
 
-    int[]  getKeysHavingValueAnyvalue(Map<Integer, String> map, int val1, int val2){
+    List<Integer>  getKeysHavingValueAnyValue(Map<Integer, String> map, String val1, String val2){
         return null;
     }
 
