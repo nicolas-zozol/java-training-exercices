@@ -21,6 +21,7 @@ It's designed for Java beginners, so there are a lot of small steps and it's wel
 
 **Ah** is the Ace of Heart
 
+
 ## Where to start ?
 
 You must pass the tests in that exact order:
@@ -34,6 +35,33 @@ You must pass the tests in that exact order:
 The `group()` map will allow to build a nice map for your algorithm.
 
 Let's say you have: **2c 4s 4h Ah Ad**
+
+| Key  | Value         |
+| ---- | ------------- |
+| 2    | [ **2c**]     |
+| 4    | [ **4s, 4h**] |
+| 14   | [ **Ah, Ad**] |
+
+Remember that this is a TreeMap, keys are ordered.
+So you have `map.size() == 3`. It proves that your hand is either a Double Pair or a Trips
+
+
+Let's say you have: **2c 4s 4h 4d Ad**
+
+| Key  | Value         |
+| ---- | ------------- |
+| 2    | [ **2c**]     |
+| 4    | [ **4s, 4h, 4d**] |
+| 14   | [ **Ad**] |
+
+You also have `map.size() == 3`.
+
+So your algorithm must find difference between Double Pair and Trips. The `Hand` class has a `number(cardValue)` method for this.
+
+If you have `map.size()==3 && hand.number(map.keySet().first()) ==3 ` then you have a trips.
+
+
+
 
 
 
