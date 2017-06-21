@@ -38,37 +38,8 @@ public class IHandTest extends PokerTest {
 		return deck.giveHand();
 	}
 
-	@Test
-	public void testChangeCards() {
-
-	}
-
 	
 
-
-	@Test
-	public void testNumber() {
-		IHand hand = newHand("4c 4s 2s 3s 6h");
-		assertTrue(hand.number(4) ==2);
-		
-		hand = newHand("4c 3s 3h 3c 6h");
-		assertTrue(hand.number(3) ==3);
-		
-		hand = newHand("4c 4s 2s 3s 6h");
-		assertTrue(hand.number(Card.AS_VALUE) ==0);
-		
-		hand = newHand("4c 4s 2s As Ah");
-		assertTrue(hand.number(Card.AS_VALUE) ==2);
-	}
-
-	@Test
-	public void testGroup() {
-		IHand hand = newHand("4c 4s 2s As Ah");
-		assertTrue(hand.group().get(4).size()==2);
-		assertTrue(hand.group().get(Card.AS_VALUE).size()==2);
-		assertTrue(hand.group().get(12)==null);
-		assertTrue(hand.group().get(2).size()==1);
-	}
 
 	@Test
 	public void testIsStraight() {
@@ -76,6 +47,7 @@ public class IHandTest extends PokerTest {
 		assertTrue(hand.toString(), hand.isStraight());		
 	}
 	
+	// Straight with Aces is a bit complicated so we'll ignore it now
 	@Test
 	@Ignore
 	public void testIsStraightWithAce() {
@@ -99,6 +71,33 @@ public class IHandTest extends PokerTest {
 		assertTrue(hand.getClassifier() == HandClassifier.STRAIGHT_FLUSH);
 	}
 	
+	
+	@Test
+	// The number() function is already written. This test should pass.
+	// It's here mainly for documentation
+	public void testNumber() {
+		IHand hand = newHand("4c 4s 2s 3s 6h");
+		assertTrue(hand.number(4) ==2);
+		
+		hand = newHand("4c 3s 3h 3c 6h");
+		assertTrue(hand.number(3) ==3);
+		
+		hand = newHand("4c 4s 2s 3s 6h");
+		assertTrue(hand.number(Card.AS_VALUE) ==0);
+		
+		hand = newHand("4c 4s 2s As Ah");
+		assertTrue(hand.number(Card.AS_VALUE) ==2);
+	}
+
+	@Test
+	public void testGroup() {
+		IHand hand = newHand("4c 4s 2s As Ah");
+		assertTrue(hand.group().get(4).size()==2);
+		assertTrue(hand.group().get(Card.AS_VALUE).size()==2);
+		assertTrue(hand.group().get(12)==null);
+		assertTrue(hand.group().get(2).size()==1);
+	}
+
 
 	@Test
 	public void testTwoPair() {
