@@ -2,7 +2,6 @@ package io.robusta.hand.interfaces;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import java.util.Collection;
 
@@ -12,7 +11,6 @@ import org.junit.Test;
 
 import io.robusta.hand.Card;
 import io.robusta.hand.PokerTest;
-import io.robusta.hand.solution.Deck;
 import io.robusta.hand.solution.DeckGenerator;
 import io.robusta.hand.solution.Hand;
 

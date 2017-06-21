@@ -1,3 +1,4 @@
+
 package io.robusta.hand.interfaces;
 
 import java.util.Set;
@@ -33,6 +34,12 @@ public interface IHand extends SortedSet<Card>, IHandResolver{
 	 * @return
 	 */
 	int highestValue();
+
+
+	Set<Card> changeCards(IDeck deck, Set<Card> cards);
+
+
+	int getSecondHighestValue();
 	
 	
 	

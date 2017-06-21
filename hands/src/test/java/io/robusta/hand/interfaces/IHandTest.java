@@ -1,13 +1,16 @@
+
 package io.robusta.hand.interfaces;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-import io.robusta.hand.Card;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import io.robusta.hand.Card;
 import io.robusta.hand.HandClassifier;
 import io.robusta.hand.PokerTest;
 import io.robusta.hand.solution.Deck;
@@ -156,3 +159,4 @@ public class IHandTest extends PokerTest {
 	}
 
 }
+
