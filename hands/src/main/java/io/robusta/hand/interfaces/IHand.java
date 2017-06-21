@@ -40,6 +40,9 @@ public interface IHand extends SortedSet<Card>, IHandResolver{
 	 * @return
 	 */
 	int highestValue();
+	int getSecondHighestValue();
+
+
 	
 	
 	

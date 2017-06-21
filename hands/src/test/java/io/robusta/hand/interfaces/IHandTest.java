@@ -64,6 +64,7 @@ public class IHandTest extends PokerTest {
 	@Test
 	public void testGroup() {
 		IHand hand = newHand("4c 4s 2s As Ah");
+	
 		assertTrue(hand.group().get(4).size()==2);
 		assertTrue(hand.group().get(Card.AS_VALUE).size()==2);
 		assertTrue(hand.group().get(12)==null);
@@ -92,10 +93,12 @@ public class IHandTest extends PokerTest {
 		IHand hand = newHand("4c 5c 2c 3c Qc");
 		assertTrue(hand.toString(), hand.isFlush());
 	}
+	
 
 	@Test
 	public void testStraightFlush() {
 		IHand hand = newHand("2c 3c 4c 5c 6c");
+		assertEquals(HandClassifier.STRAIGHT_FLUSH,hand.getClassifier());
 		assertTrue(hand.getClassifier() == HandClassifier.STRAIGHT_FLUSH);
 	}
 	
