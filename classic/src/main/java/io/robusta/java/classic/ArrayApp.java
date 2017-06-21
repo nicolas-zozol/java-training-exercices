@@ -19,6 +19,10 @@ public class ArrayApp {
         return null;
     }
 
+    String asStringJoin (int [] numbers){
+        return null;
+    }
+
     String asString (String [] strings){
         return null;
     }

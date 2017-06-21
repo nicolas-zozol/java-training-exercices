@@ -51,5 +51,9 @@ public class MapApp {
         return null;
     }
 
+    List<Card> getCards(Map<Integer, Character> map){
+        return null;
+    }
+
 
 }

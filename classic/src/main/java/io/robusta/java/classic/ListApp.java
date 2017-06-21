@@ -1,5 +1,6 @@
 package io.robusta.java.classic;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,6 +9,11 @@ import java.util.List;
 public class ListApp {
 
     List<Integer> buildList(int a, int b, int c){
+        return null;
+    }
+
+
+    ArrayList<Integer> buildList(int... numbers){
         return null;
     }
 
@@ -22,4 +28,15 @@ public class ListApp {
     }
 
 
+    int first(List<Integer> ints){
+        return 0;
+    }
+
+    int last(List<Integer> ints){
+        return 0;
+    }
+
+    int medium(List<Integer> ints){
+        return 0;
+    }
 }
