@@ -47,7 +47,7 @@ public class IHandTest extends PokerTest {
 		assertTrue(hand.toString(), hand.isStraight());		
 	}
 	
-	// Straight with Aces is a bit complicated wo we'll ignore it now
+	// Straight with Aces is a bit complicated so we'll ignore it now
 	@Test
 	@Ignore
 	public void testIsStraightWithAce() {
