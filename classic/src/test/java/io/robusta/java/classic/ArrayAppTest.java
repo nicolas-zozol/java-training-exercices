@@ -10,6 +10,18 @@ import static org.junit.Assert.*;
 public class ArrayAppTest {
     ArrayApp app = new ArrayApp();
 
+
+
+    @Test
+    public void buildEmptyArray() throws Exception {
+
+        String[] array = app.buildEmptyArray(3);
+        assertTrue(array.length == 3);
+        assertTrue(array[0] == null);
+        assertTrue(array[1] == null);
+        assertTrue(array[2] == null);
+    }
+
     @Test
     public void buildArray() throws Exception {
         int[] result = app.buildArray(2,4,6);

@@ -1,22 +1,16 @@
 package io.robusta.java.classic;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
 
 /**
  *
  *  Map :
  *  We add entry with map.put(key, val)
- *  We read entry with map.get(key)
+ *  We read value with map.get(key)
  *  We read keys with map.keySet()
  *  We read values with map.values()
  *  We read entries with map.entrySet()
- *
- *
- *
  *
  *
  */
@@ -67,6 +61,18 @@ public class MapApp {
     }
 
     Set<Entry<Integer, String>> getEntrySet(Map<Integer, String> map){
+        return null;
+    }
+
+
+    //TODO: move up
+    String displayMap(Map<Integer, String> map){
+        // Use map.entrySet()to have nice display
+        for (Entry<Integer, String> entry: map.entrySet()){
+            System.out.println( "Entry:"+entry.getKey());
+            System.out.println( "Value:"+entry.getValue());
+        }
+
         return null;
     }
 

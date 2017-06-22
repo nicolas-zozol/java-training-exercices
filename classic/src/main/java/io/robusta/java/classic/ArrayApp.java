@@ -5,6 +5,12 @@ package io.robusta.java.classic;
  */
 public class ArrayApp {
 
+
+
+    String[] buildEmptyArray(int size){
+        return null;
+    }
+
     int[] buildArray(int a, int b, int c){
         return null;
     }

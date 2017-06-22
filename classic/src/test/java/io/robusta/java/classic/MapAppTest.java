@@ -140,6 +140,19 @@ public class MapAppTest {
 
     }
 
+
+    @Test
+    public void displayMap() throws Exception{
+
+        //use map.entrySet() to display the map
+        int[] keys={1,18, 5};
+        String[] values = {"John", "Jim", "Jane"};
+
+        String expectedDisplay = "John->1:Jim->18:Jane->5:";
+
+
+    }
+
     @Test
     public void getKeysHavingValue() throws Exception {
 
@@ -148,6 +161,14 @@ public class MapAppTest {
         String[] values = {"John", "Jim", "Jane"};
 
         Map<Integer, String> map= app.buildMap(keys, values);
+
+        System.out.println(map);
+
+        System.out.println(map.entrySet().iterator().next());
+
+        for (Map.Entry<Integer, String> entry: map.entrySet()){
+            System.out.println( entry.getKey() + ">>>>"+ entry.getValue());
+        }
 
         List<Integer> keysFromValue= app.getKeysHavingValue(map, "John");
 
