@@ -1,7 +1,9 @@
 package io.robusta.java.classic;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 /**
@@ -11,7 +13,7 @@ import java.util.Set;
  *  We read entry with map.get(key)
  *  We read keys with map.keySet()
  *  We read values with map.values()
- *
+ *  We read entries with map.entrySet()
  *
  *
  *
@@ -55,5 +57,17 @@ public class MapApp {
         return null;
     }
 
+
+    List<Integer> getKeysAsList(Map<Integer, String> map){
+        return null;
+    }
+
+    LinkedList<String> getValuesAsLinkedList(Map<Integer, String> map){
+        return null;
+    }
+
+    Set<Entry<Integer, String>> getEntrySet(Map<Integer, String> map){
+        return null;
+    }
 
 }

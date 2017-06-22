@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import static org.junit.Assert.*;
@@ -57,6 +58,44 @@ public class MapAppTest {
     }
 
     @Test
+    public void getKeysAsList() throws Exception {
+        int[] keys={1,18, 5};
+        String[] values = {"John", "Jim", "Jane"};
+
+        Map<Integer, String> map= app.buildMap(keys, values);
+
+        List<Integer> keySet = app.getKeysAsList(map);
+        assertTrue(keySet.contains(1));
+        assertTrue(keySet.contains(18));
+        assertTrue(keySet.contains(5));
+        assertFalse(keySet.contains(2));
+
+
+    }
+
+    @Test
+    public void getEntries() throws Exception {
+        int[] keys={1,18, 5};
+        String[] values = {"John", "Jim", "Jane"};
+
+        Map<Integer, String> map= app.buildMap(keys, values);
+
+        Set<Entry<Integer, String>> entrySet = app.getEntrySet(map);
+        assertTrue(entrySet.size() == 3);
+
+        String builder = "";
+        for (Entry<Integer, String> entry: entrySet){
+            builder += entry.getKey()+":"+entry.getValue();
+        }
+
+        assertTrue(entrySet.contains(18));
+        assertTrue(entrySet.contains(5));
+        assertFalse(entrySet.contains(2));
+
+
+    }
+
+    @Test
     public void getValues() throws Exception {
         int[] keys={1,18, 5};
         String[] values = {"John", "Jim", "Jane"};
@@ -74,30 +113,30 @@ public class MapAppTest {
     public void getValuesFromMap() throws Exception {
 
         int[] keys={1,18, 5};
-        String[] values = {"John", "Jim", "Jane"};
+        String[] values = {"Jim","John","Jane"};
 
         Map<Integer, String> map= app.buildMap(keys, values);
 
         String[] selectedValues= app.getValuesFromMap(map,1,5);
 
-        assertEquals(selectedValues.length,2);
-        assertEquals(selectedValues[0],"Jim");
-        assertEquals(selectedValues[1],"Jane");
+        assertEquals(2,selectedValues.length);
+        assertEquals("Jim",selectedValues[0]);
+        assertEquals("Jane",selectedValues[1]);
 
 
         // switching keys
         selectedValues= app.getValuesFromMap(map,5,1);
 
-        assertEquals(selectedValues.length,2);
-        assertEquals(selectedValues[0],"Jane");
-        assertEquals(selectedValues[1],"Jim");
+        assertEquals(2,selectedValues.length);
+        assertEquals("Jane",selectedValues[0]);
+        assertEquals("Jim",selectedValues[1]);
 
         // unknown key
         selectedValues= app.getValuesFromMap(map,0,1);
 
-        assertEquals(selectedValues.length,2);
-        assertEquals(selectedValues[0],null);
-        assertEquals(selectedValues[1],"Jim");
+        assertEquals(2,selectedValues.length);
+        assertEquals(null,selectedValues[0]);
+        assertEquals("Jim",selectedValues[1]);
 
     }
 
