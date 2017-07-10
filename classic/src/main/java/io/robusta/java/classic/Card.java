@@ -1,7 +1,7 @@
 package io.robusta.java.classic;
 
 /**
- * Created by nicorama on 21/06/2017.
+ * Created by nicorama LIVE EDIT on 21/06/2017.
  */
 public class Card {
     int value;
