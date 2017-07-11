@@ -1,3 +1,10 @@
+
+.idea/
+*.pdf
+*.iml
+*.zip
+.~lock*
+
 ### Node template
 # Logs
 logs
