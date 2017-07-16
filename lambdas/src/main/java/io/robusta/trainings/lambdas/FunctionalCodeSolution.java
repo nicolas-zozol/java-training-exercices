@@ -1,5 +1,6 @@
 package io.robusta.trainings.lambdas;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -8,8 +9,23 @@ import java.util.List;
 public class FunctionalCodeSolution implements FunctionalCode {
     @Override
     public List<Integer> doubling(List<Integer> inputs) {
-
-        inputs.r
         return inputs;
+    }
+
+    @Override
+    public List<Integer> sort(List<Integer> nums) {
+        return nums;
+    }
+
+    @Override
+    public List<Integer> reverseSort(List<Integer> nums) {
+        return nums;
+    }
+
+    @Override
+    public List<String> mutableFilter(List<String> strings,String chain ) {
+
+        strings.removeIf(s -> s.contains(chain));
+        return strings;
     }
 }

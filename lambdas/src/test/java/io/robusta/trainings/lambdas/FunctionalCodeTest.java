@@ -31,4 +31,34 @@ public class FunctionalCodeTest {
 
     }
 
+    @Test
+    public void sort(){
+        List<Integer> inputs = Arrays.asList(1,5,3);
+        List<Integer> expected = Arrays.asList(1,3,5);
+        List<Integer> actual= code.sort(inputs);
+
+        // Use Collections.sort()
+        assertEquals(expected, actual);
+
+        // But without changing original
+        assertEquals("original should not change",5, inputs.get(1).intValue() );
+
+    }
+
+    @Test
+    public void reverseSort(){
+        List<Integer> inputs = Arrays.asList(1,5,3);
+        List<Integer> expected = Arrays.asList(5,3,1);
+        List<Integer> actual= code.sort(inputs);
+
+
+        assertEquals(expected, actual);
+
+        // But without changing original
+        assertEquals("original should not change",5, inputs.get(1).intValue() );
+
+    }
+
+
+
 }
