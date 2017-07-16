@@ -1,5 +1,7 @@
 package io.robusta.people;
 
+import java.util.Random;
+
 /**
  * Created by Robusta Code
  */
@@ -8,7 +10,7 @@ public class People {
     int age;
 
     public People(String name) {
-        this.name = name;
+        this(name ,new Random().nextInt(100));
     }
 
     public People(String name, int age) {
@@ -20,15 +22,6 @@ public class People {
         return age;
     }
 
-    int getCount(){
-        int count =12;
-        return count;
-    }
-
-    int increaseCount(){
-        int count =2;
-        return count+1;
-    }
 
 
     @Override
