@@ -37,8 +37,8 @@ public class ListAppTest {
     @Test
     public void equality() throws Exception {
 
-        List<Integer> list1 = app.buildList(2,4,6);
-        List<Integer> list2 = app.buildList(2,4,6);
+        List<Integer> list1 = app.buildList(2,400,6);
+        List<Integer> list2 = app.buildList(2,400,6);
         List<Integer> list3 = app.buildList(0,-1,6);
 
         assertTrue(app.equality(list1, list2));
