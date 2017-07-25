@@ -29,6 +29,10 @@ public class MapApp {
         return null;
     }
 
+    List<Integer> getKeysAsList(Map<Integer, String> map){
+        return null;
+    }
+    
     List<String> getValues(Map<Integer, String> map){
         return null;
     }
@@ -52,9 +56,7 @@ public class MapApp {
     }
 
 
-    List<Integer> getKeysAsList(Map<Integer, String> map){
-        return null;
-    }
+   
 
     LinkedList<String> getValuesAsLinkedList(Map<Integer, String> map){
         return null;
