@@ -80,7 +80,7 @@ public class MapAppTest {
 
         Map<Integer, String> map= app.buildMap(keys, values);
 
-        Set<Entry<Integer, String>> entrySet = app.getEntrySet(map);
+        Set<Entry<Integer, String>> entrySet = app.getEntries(map);
         assertTrue(entrySet.size() == 3);
 
         String builder = "";
