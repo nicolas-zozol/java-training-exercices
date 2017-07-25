@@ -33,10 +33,15 @@ public class MapApp {
         return null;
     }
     
+     Set<Entry<Integer, String>> getEntries(Map<Integer, String> map){
+        return null;
+    }
+    
     List<String> getValues(Map<Integer, String> map){
         return null;
     }
 
+    
 
     String[]  getValuesFromMap(Map<Integer, String> map, int key1,  int key2){
         return null;
@@ -62,9 +67,7 @@ public class MapApp {
         return null;
     }
 
-    Set<Entry<Integer, String>> getEntrySet(Map<Integer, String> map){
-        return null;
-    }
+   
 
 
     //TODO: move up
