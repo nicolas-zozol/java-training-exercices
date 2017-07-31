@@ -11,7 +11,7 @@ public class GenericProblemApplication {
 
     public static void main(String[] args) {
 
-        ArrayList liste = new ArrayList();
+        ArrayList<Comment> liste = new ArrayList<>();
         Comment c1 = new Comment("Toto");
 
         //Adding comment and strings
