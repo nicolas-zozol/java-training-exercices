@@ -9,10 +9,15 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <modules>
         <module>hands</module>
-        <module>demos</module>
         <module>classic</module>
+        <module>demos</module>
+
         <module>birthday</module>
     </modules>
 
@@ -22,6 +27,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.3.2</version>
                     <configuration>
                         <source>1.8</source>
                         <target>1.8</target>
