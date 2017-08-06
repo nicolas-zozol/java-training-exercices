@@ -10,7 +10,7 @@ public class FoodApp {
 
     int money = 0;
     int foodStock = 1000;
-    int meal=0;
+
 
 
     void reset(){

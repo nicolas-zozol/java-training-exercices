@@ -52,23 +52,9 @@ public class MapApp {
         return null;
     }
 
-    List<Integer>  getKeysHavingValueAnyValue(Map<Integer, String> map, String val1, String val2){
+    List<Integer>  getKeysHavingValueAnyValue(Map<Integer, String> map, String... values){
         return null;
     }
-
-    List<Card> getCards(Map<Integer, Character> map){
-        return null;
-    }
-
-
-   
-
-    LinkedList<String> getValuesAsLinkedList(Map<Integer, String> map){
-        return null;
-    }
-
-   
-
 
     //TODO: move up
     String displayMap(Map<Integer, String> map){
@@ -80,5 +66,17 @@ public class MapApp {
 
         return null;
     }
+
+    List<Card> getCards(Map<Integer, Character> map){
+        return null;
+    }
+
+
+
+
+   
+
+
+
 
 }

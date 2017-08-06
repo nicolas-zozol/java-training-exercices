@@ -24,15 +24,16 @@ public class FoodAppTest {
         int initialMoney = app.money;
         int initialStock = app.foodStock;
         assertTrue(initialMoney == 0);
-        int value = app.deliver(10);
+        int gross = app.deliver(10);
 
         // We deliver 10 units of food, and get 20 bucks
-        assertTrue(10*2 == value);
+        assertTrue(10*2 == gross);
 
+        //
         assertTrue(app.foodStock == initialStock - 10);
 
         // But the cost of the travel is 2;
-        assertTrue(app.money == initialMoney + value - FoodApp.TRAVEL_COST);
+        assertTrue(app.money == initialMoney + gross - FoodApp.TRAVEL_COST);
 
     }
 

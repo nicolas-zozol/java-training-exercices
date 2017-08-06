@@ -83,16 +83,6 @@ public class MapAppTest {
         Set<Entry<Integer, String>> entrySet = app.getEntries(map);
         assertTrue(entrySet.size() == 3);
 
-        String builder = "";
-        for (Entry<Integer, String> entry: entrySet){
-            builder += entry.getKey()+":"+entry.getValue();
-        }
-
-        assertTrue(entrySet.contains(18));
-        assertTrue(entrySet.contains(5));
-        assertFalse(entrySet.contains(2));
-
-
     }
 
     @Test
@@ -147,8 +137,10 @@ public class MapAppTest {
         //use map.entrySet() to display the map
         int[] keys={1,18, 5};
         String[] values = {"John", "Jim", "Jane"};
+        Map<Integer, String> map= app.buildMap(keys, values);
 
         String expectedDisplay = "John->1:Jim->18:Jane->5:";
+        assertEquals(expectedDisplay, app.displayMap(map));
 
 
     }
@@ -162,10 +154,8 @@ public class MapAppTest {
 
         Map<Integer, String> map= app.buildMap(keys, values);
 
-        System.out.println(map);
 
-        System.out.println(map.entrySet().iterator().next());
-
+        // little help for using entries
         for (Map.Entry<Integer, String> entry: map.entrySet()){
             System.out.println( entry.getKey() + ">>>>"+ entry.getValue());
         }
@@ -227,7 +217,7 @@ public class MapAppTest {
         List<Card> cards = app.getCards(virtualCards);
 
         Card sixOfDiamond = new Card(6,'d');
-        Card sixOfHeart = new Card(6,'d');
+        Card sixOfHeart = new Card(6,'h');
 
         assertTrue(cards.contains(sixOfDiamond));
         assertFalse(cards.contains(sixOfHeart));
