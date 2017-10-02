@@ -1,4 +1,4 @@
-package io.robusta.java.classic.pingouins;
+package io.robusta.java.classic.penguins;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -39,7 +39,7 @@ public class PenguinAppTest {
 
 
     @Test
-    public void createSimplePingouin(){
+    public void createSimplePenguin(){
         Penguin penguin = app.createSimplePenguin();
         assertNotNull(penguin);
         assertNotNull(penguin.getName());
@@ -74,7 +74,7 @@ public class PenguinAppTest {
     }
 
     @Test
-    public void getFriend(Penguin penguin){
+    public void getFriend(){
         Penguin friend = app.getFriend(ricoh);
         assertSame(tux, friend);
 

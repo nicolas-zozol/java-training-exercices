@@ -1,4 +1,4 @@
-package io.robusta.java.classic.pingouins;
+package io.robusta.java.classic.penguins;
 
 /**
  * Created by Nicolas on 22/11/2016.

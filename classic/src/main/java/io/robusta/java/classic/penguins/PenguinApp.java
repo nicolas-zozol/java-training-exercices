@@ -1,4 +1,4 @@
-package io.robusta.java.classic.pingouins;
+package io.robusta.java.classic.penguins;
 
 import java.util.List;
 
