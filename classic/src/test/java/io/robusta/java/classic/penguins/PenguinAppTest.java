@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.Assert.*;
 
@@ -129,10 +130,10 @@ public class PenguinAppTest {
 
     @Test
     public void  getFriends(){
-        List<Penguin> friends = app.getFriends(bigArray);
-        assertEquals(3, friends.size());
+        Set<Penguin> friends = app.getFriends(bigArray);
+        assertEquals(2, friends.size());
         assertTrue(friends.contains(tux));
-        assertFalse(friends.contains(ricoh));
+        assertTrue(friends.contains(ricoh));
 
         friends = app.getFriends(smallArray);
         assertEquals(1, friends.size());

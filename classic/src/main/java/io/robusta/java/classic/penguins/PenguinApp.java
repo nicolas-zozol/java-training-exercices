@@ -1,6 +1,7 @@
 package io.robusta.java.classic.penguins;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by nicorama on 28/09/2017.
@@ -13,7 +14,7 @@ public class PenguinApp {
     }
 
 
-    List<Penguin> getPenguins(Penguin p1, Penguin p2, Penguin p3, Penguin p4, Penguin p5){
+    List<Penguin> getPenguins(Penguin ... penguins){
         return null;
     }
 
@@ -47,7 +48,7 @@ public class PenguinApp {
 
 
 
-    List<Penguin> getFriends(Penguin[] penguins){
+    Set<Penguin> getFriends(Penguin[] penguins){
         return null;
     }
 
