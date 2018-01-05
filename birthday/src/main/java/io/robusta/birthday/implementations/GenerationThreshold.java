@@ -18,15 +18,8 @@ public class GenerationThreshold implements IGenerationThreshold{
     }
 
 
-    @Override
-    public int getSmallNumber() {
-        return 0;
-    }
-
-    @Override
-    public int getBigNumber() {
-        return 0;
-    }
+	/** Write your own tests **/
+    
 
     @Override
     public int findSmallestNumberOfPeopleRequiredToHave50() {
