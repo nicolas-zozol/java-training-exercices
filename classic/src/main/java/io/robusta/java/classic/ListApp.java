@@ -23,11 +23,6 @@ public class ListApp {
         return false;
     }
 
-    String asString (List<Integer> numbers){
-        return null;
-    }
-
-
     int first(List<Integer> ints){
         return 0;
     }
