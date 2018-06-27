@@ -27,7 +27,7 @@ public class ListAppTest {
 
     @Test
     public void buildArrayList() throws Exception {
-        List<Integer> result = app.buildList(2,4,6, 7,9);
+        List<Integer> result = app.buildList(2,4,6, 7,9, 12, 15);
         assertTrue(2 == result.get(0));
         assertTrue(4 == result.get(1));
         assertTrue(9 == result.get(4));
