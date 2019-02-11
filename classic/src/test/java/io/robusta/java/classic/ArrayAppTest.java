@@ -40,6 +40,7 @@ public class ArrayAppTest {
         int[] a2 = {2,4,6};
         int[] a3 = {0,0,0};
         int[] a4 = {0,0};
+        int[] a5 = {2,3,6};
 
         assertFalse(a1 == a2);
         assertTrue(app.equality(a1,a2));
@@ -47,6 +48,9 @@ public class ArrayAppTest {
 
         // code should not break
         assertFalse(app.equality(a1,a4));
+
+        // Don't check only the last one
+        assertFalse(app.equality(a1,a5));
 
     }
 

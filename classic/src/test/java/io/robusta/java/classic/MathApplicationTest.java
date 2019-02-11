@@ -18,8 +18,8 @@ public class MathApplicationTest {
     @Test
     public void multiplication() {
         assertEquals(0, app.multiplication(0, 10));
-        assertEquals(25, app.addition(5, 5));
-        assertEquals(-9, app.addition(3, -3));
+        assertEquals(25, app.multiplication(5, 5));
+        assertEquals(-9, app.multiplication(3, -3));
     }
 
     @Test
