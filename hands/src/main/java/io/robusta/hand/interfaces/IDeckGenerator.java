@@ -38,13 +38,7 @@ public interface IDeckGenerator {
 		return result;
 	}
 	
-	default Card generateCard(int number){
-		int value = number/4 +1;
-		int charColor = number%4 +1;
-		CardColor color = CardColor.getByValue(charColor);		
-		return new Card(value, color);
-	}
-	
+
 	
 
 }
