@@ -44,16 +44,18 @@ public class Hand extends TreeSet<Card> implements IHand {
     }
 
     @Override
+    public boolean isFlush() {
+
+        return true;
+    }
+
+
+    @Override
     public boolean isStraight() {
 
         return false;
     }
 
-    @Override
-    public boolean isFlush() {
-
-        return true;
-    }
 
 
     /**

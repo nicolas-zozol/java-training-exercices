@@ -38,13 +38,24 @@ public class IHandTest extends PokerTest {
 		return deck.giveHand();
 	}
 
-	
 
+
+	@Test
+	public void testIsFlush() {
+		IHand hand = newHand("4c 5c 2c 3c Qc");
+		assertTrue(hand.isFlush());
+
+		hand = newHand("4c 5c 2c 3c Qs");
+		assertTrue(hand.isFlush());
+	}
 
 	@Test
 	public void testIsStraight() {
 		IHand hand = newHand("4c 5c 2s 3s 6h");
-		assertTrue(hand.toString(), hand.isStraight());		
+		assertTrue(hand.isStraight());
+
+		hand = newHand("4c 5c 3s 3s 6h");
+		assertFalse(hand.isStraight());
 	}
 	
 	// Straight with Aces is a bit complicated so we'll ignore it now
@@ -53,17 +64,17 @@ public class IHandTest extends PokerTest {
 	public void testIsStraightWithAce() {
 		
 		IHand hand = newHand("4c 5c 2s 3s Ah");
-		assertTrue(hand.toString(), hand.isStraight());
+		assertTrue( hand.isStraight());
 		
 		hand = newHand("Tc Jc As Qs Kh");
-		assertTrue(hand.toString(), hand.isStraight());
+		assertTrue( hand.isStraight());
+
+		hand = newHand("Tc Jc As Ks Kh");
+		assertFalse( hand.isStraight());
+
+
 	}
 
-	@Test
-	public void testIsFlush() {
-		IHand hand = newHand("4c 5c 2c 3c Qc");
-		assertTrue(hand.toString(), hand.isFlush());
-	}
 
 	@Test
 	public void testStraightFlush() {
