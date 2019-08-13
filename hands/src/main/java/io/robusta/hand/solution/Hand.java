@@ -168,6 +168,10 @@ public class Hand extends TreeSet<Card> implements IHand {
     public HandValue getValue() {
         HandValue handValue = new HandValue();
 
+        if (this.isHighCard()){
+            // .... fill to pass the test ; see below
+        }
+
         // Exemple for FourOfAKind ; // do for all classifiers
         if (this.isFourOfAKind()) {
             handValue.setClassifier(HandClassifier.FOUR_OF_A_KIND);

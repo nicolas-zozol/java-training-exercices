@@ -109,6 +109,26 @@ public class IHandTest extends PokerTest {
 		assertTrue(hand.group().get(2).size()==1);
 	}
 
+	@Test
+	public void testHighCard() {
+		IHand hand = newHand("3c 4h Jc 2s Qc");
+		assertTrue(hand.isHighCard()); // High card means there is not even a pair
+
+		// Once you know it's a High card, put the qualifier in attributes
+		assertEquals(HandClassifier.HIGH_CARD, hand.getClassifier());
+
+		hand = newHand("3c 4c Jc 2c Qc");
+		assertFalse(hand.isHighCard()); // all 5 different, but it's a flush
+	}
+
+	@Test
+	public void testHighCardClassifier() {
+		IHand hand = newHand("3c 4h Jc 2s Qc");
+
+		// Same hand that above. Once you know it's a High card, put the qualifier in attributes
+		assertEquals(HandClassifier.HIGH_CARD, hand.getClassifier());
+	}
+
 
 	@Test
 	public void testTwoPair() {
@@ -122,9 +142,27 @@ public class IHandTest extends PokerTest {
 		IHand hand = newHand("4c Kh 2c 2s Qc");
 		assertTrue(hand.getClassifier() == HandClassifier.PAIR);
 	}
-	
 
-	
+	@Test
+	public void testTrips() {
+		IHand hand = newHand("4c 2h 2c 2s Qc");
+		assertTrue(hand.getClassifier() == HandClassifier.TRIPS);
+
+		hand = newHand("4c 2h 2c 2s 2d");
+		assertFalse(hand.getClassifier() == HandClassifier.TRIPS);
+	}
+
+	@Test
+	public void testQuads() {
+		IHand hand = newHand("4c 2h 2c 2s Qc");
+		assertFalse(hand.getClassifier() == HandClassifier.FOUR_OF_A_KIND);
+
+		hand = newHand("4c 2h 2c 2s 2d");
+		assertTrue(hand.getClassifier() == HandClassifier.FOUR_OF_A_KIND);
+	}
+
+
+
 	@Test
 	public void testBeats() {
 		IHand hand1 = newHand("4c Kh 2c 2s Qc");
@@ -143,9 +181,9 @@ public class IHandTest extends PokerTest {
 	@Test
 	public void testHasCardValue(){
 		IHand hand = newHand("4c Kh 2c 2s Qc");
-		assertTrue(hand.hasCardValue(13));
+		assertTrue(hand.hasCardValue(13)); // Because Kh has value 13
 		assertTrue(hand.hasCardValue(4));
-		assertFalse(hand.hasCardValue(7));
+		assertFalse(hand.hasCardValue(7)); // Because there is no value
 	}
 	
 	@Test
